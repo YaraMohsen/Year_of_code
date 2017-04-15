@@ -1,0 +1,45 @@
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+   Scanner in = new Scanner (System.in);
+        //put N
+        int N = in.nextInt();
+        //INIT THE arrays
+        int [] x = new int[N];
+        int [] w =new int [N];
+        //put the inputs in  arrays
+        for(int i =0;i<N ; i++)
+            {
+            x [i] = in.nextInt();
+            
+           }
+    
+        for(int i =0;i<N ; i++)
+            {
+           w [i] = in.nextInt();
+            
+          }
+        
+    // sum of (x*w)
+        float res_tot =0;
+       float res_w =0;
+        float mean = 0;
+        
+        for (int i=0 ; i<N ; i++){
+            res_w = res_w + w[i] ;
+            res_tot = res_tot + (x[i] * w[i]); 
+            
+        }
+    
+        mean = (res_tot / res_w) ;
+        System.out.println(mean);
+        
+    }
+}
