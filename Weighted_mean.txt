@@ -38,8 +38,10 @@ public class Solution {
             
         }
     
-        mean = (res_tot / res_w) ;
-        System.out.println(mean);
+       mean = (res_tot / res_w) ;
+        double roundOff = Math.round(mean*10.0)/10.0;
+        System.out.println(roundOff);
+        
         
     }
 }
