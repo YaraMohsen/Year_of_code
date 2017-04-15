@@ -1,0 +1,75 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+       Scanner in = new Scanner(System.in);
+        
+        float mean =0;
+        int N = in.nextInt();
+        float[]test = new float[N];
+        
+        for (int i =0; i<N ; i++){
+            
+        test[i] = in.nextInt();  
+        }
+       Arrays.sort(test);
+        
+        
+       
+        //mean 
+        for (int x =0 ; x < N ; x++){
+            
+            mean = test[x] + mean ;
+        }
+        float res =(mean/N);
+        System.out.println(res);
+        
+        //--------------------------------------
+        
+        //median
+        
+         
+      
+        if (N%2 == 1)
+            { int x = (N-1)/2;
+            float res1 = test[x+1];
+            System.out.println(res1);
+        }
+            
+         if (N%2 == 0){
+             int x = N/2 ;
+            
+             float res2 =  ( (test[x-1] + test[x]) );
+             System.out.println(res2 / 2);
+             
+         }
+    
+   
+       //-------------------------------------
+        
+        // mode
+         float maxValue = 0, maxCount=0;
+
+    for (int i = 0; i < N ; ++i) {
+        int count = 0;
+        for (int j = 0; j < N; ++j) {
+            if (test[j] == test[i])
+                ++count;
+        }
+        if (count > maxCount) {
+            maxCount = count;
+            maxValue = test[i];
+        }
+    }
+     int h ;
+        h= (int) maxValue;
+    System.out.println(h );
+       
+    }
+    }
